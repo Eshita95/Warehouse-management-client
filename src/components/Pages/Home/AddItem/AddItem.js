@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import './AddItem.css';
 
 const AddItem = () => {
     const navigate = useNavigate()
@@ -31,13 +32,13 @@ const AddItem = () => {
     return (
         <div>
              <form onSubmit={handleUpdate}>
-                <input placeholder='url'name='image' type="text" /><br />
-                <input placeholder='name' name='name' type="text" /><br />
-                <input placeholder='price' name='price' type="text" /><br />
-                <input placeholder='quantity' name='quantity' type="text" /><br />
-                <input placeholder='description' name='description' type="text" /><br />
-                <input placeholder='suppler_name' name='suppler' type="text" /><br />
-                <input type="submit" value='Add-User' />
+                <input className='input-field' placeholder='url'name='image' type="text" /><br />
+                <input className='input-field' placeholder='name' name='name' type="text" /><br />
+                <input className='input-field' placeholder='price' name='price' type="text" /><br />
+                <input className='input-field' placeholder='quantity' name='quantity' type="text" /><br />
+                <input className='input-field' placeholder='description' name='description' type="text" /><br />
+                <input className='input-field' placeholder='suppler_name' name='suppler' type="text" /><br />
+                <input className='input-field' type="submit" value='Add-User' />
             </form>
         </div>
     );

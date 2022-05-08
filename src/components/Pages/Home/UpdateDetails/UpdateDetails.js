@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import './UpdateDetails.css'
 
 const UpdateDetails = () => {
     const navigate = useNavigate();
@@ -45,12 +46,12 @@ const UpdateDetails = () => {
             <div>
             <h2>update service : {update.name}</h2>
             <form onSubmit={handleUpdate}>
-                <input type="text" name="image" placeholder='url' /> <br />
-                <input placeholder='name' name='name' type="text" /><br />
-                <input placeholder='price' name='price' type="text" /><br />
-                <input placeholder='quantity' name='quantity' type="text" /><br />
-                <input placeholder='description' name='description' type="text" /><br />
-                <input type="submit" value='Update-User' />
+                <input className='input-update' type="text" name="image" placeholder='url' /> <br />
+                <input className='input-update' placeholder='name' name='name' type="text" /><br />
+                <input className='input-update' placeholder='price' name='price' type="text" /><br />
+                <input className='input-update' placeholder='quantity' name='quantity' type="text" /><br />
+                <input className='input-update' placeholder='description' name='description' type="text" /><br />
+                <input className='input-update' type="submit" value='Update-User' />
             </form>
         </div>
         </div>
