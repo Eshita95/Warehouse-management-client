@@ -11,6 +11,7 @@ import UpdateDetails from './components/Pages/Home/UpdateDetails/UpdateDetails';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Blogs from './components/Pages/Blogs/Blogs';
+import AddItem from './components/Pages/Home/AddItem/AddItem';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/update/:id' element={<UpdateDetails></UpdateDetails>}></Route>
+        <Route path ='/addItem' element={<AddItem></AddItem>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
         
 

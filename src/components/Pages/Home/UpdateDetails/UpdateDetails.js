@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const UpdateDetails = () => {
+    const navigate = useNavigate();
     const {id} = useParams();
     const [update, setUpdate] = useState({});
 
@@ -13,13 +14,14 @@ const UpdateDetails = () => {
         .then(data => setUpdate(data))
     },[])
     const handleUpdate =(e)=>{
-        e.preventDefault()
+        e.preventDefault();
+        const image = e.target.image.value;
         const name = e.target.name.value;
         const price = e.target.price.value;
         const quantity = e.target.quantity.value;
         const description = e.target.description.value;
 
-        const update = {name, price, quantity, description};
+        const update = {name, price,image, quantity, description};
 
         fetch(`http://localhost:5000/service/${id}`,{
             method: 'PUT',
@@ -32,7 +34,9 @@ const UpdateDetails = () => {
         .then(data => {
             console.log('success', data)
             toast('user Update success')
-            // e.target.reset()
+            e.target.reset()
+            navigate('/inventory');
+
         })
     }
     return (
@@ -41,6 +45,7 @@ const UpdateDetails = () => {
             <div>
             <h2>update service : {update.name}</h2>
             <form onSubmit={handleUpdate}>
+                <input type="text" name="image" placeholder='url' /> <br />
                 <input placeholder='name' name='name' type="text" /><br />
                 <input placeholder='price' name='price' type="text" /><br />
                 <input placeholder='quantity' name='quantity' type="text" /><br />

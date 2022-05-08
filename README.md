@@ -19,15 +19,12 @@ You may also see any lint errors in the console.
 
 This Website for Perfume Warehouse Management. where you can observe stock, quantity, perfumes brands and also you can update every thing about product and service. Added Email authentication and a social login authentication. 
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `Bullet point about websites feature and functionalitys`
+* Use react router dom
+* Use Firebase hooks
+* Use React Toastify
+* Use Bootstrap
+* Use CSS
 
 ### `npm run eject`
 
