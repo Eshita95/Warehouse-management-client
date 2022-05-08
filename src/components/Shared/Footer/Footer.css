@@ -1,0 +1,13 @@
+.Footer-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    align-items: center;
+    background-color: black;
+    color: azure;
+    padding: 20px;
+    margin-top: 20px;
+}
+.Footer-container p{
+    font-size: large;
+}

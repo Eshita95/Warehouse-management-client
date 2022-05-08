@@ -1,28 +1,31 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import './Header.css';
+import auth from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
     const [user] = useAuthState(auth)
     const handleSignOut = () => {
-        singOut(auth)
+        signOut(auth)
     }
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" variant="dark">
+            <Navbar collapseOnSelect className='bg-dark' expand="lg" variant="dark">
                 <Container>
                     <Navbar.Brand href="#home">Perfume-Warehouse</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link href="#home" as={Link} to='/home'>Home</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#inventory">Inventory</Nav.Link>
+                            <Nav.Link href="#inventory" as={Link} to='/inventory'>Inventory</Nav.Link>
+                            <Nav.Link href="#blogs" as={Link} to='/blogs'>Blogs</Nav.Link>
                             {
-                                user ? <button onClick={handleSignOut}>SignOut</button> : <Nav.Link herf="#login" as={Link} to='/login'></Nav.Link>
+                                user ? <button onClick={handleSignOut}>SignOut</button> : <Nav.Link herf="#login" as={Link} to='/login'> login</Nav.Link>
                             }
                         </Nav>
                     </Navbar.Collapse>

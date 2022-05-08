@@ -1,0 +1,7 @@
+.blogs-container{
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid rgb(209, 205, 205);
+    border-radius: 10px;
+    background-color: aliceblue;
+}
